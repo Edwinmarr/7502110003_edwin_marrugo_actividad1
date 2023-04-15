@@ -1,6 +1,6 @@
 <?php
 
-include_once '../model/Users.php';
+include_once '../model/User.php';
 
 
 class UsersRepository {
@@ -31,6 +31,8 @@ class UsersRepository {
     }
     
 }
+
+phpinfo();
 /*
 $list = UsersRepository::list_users();
 

@@ -1,5 +1,5 @@
 <?php
-include_once '../model/Grades.php';
+include_once '../model/Grade.php';
 
 class GradesRepository {
     public static function insert ($grade){
