@@ -8,12 +8,15 @@ class Student extends ActiveRecord\Model
   static $has_many = array(
     array('grades')
   );
+  public function getGrades() {
+    return $this->grades;
+  }
    
 }
 
 try {
   $student = Student::find_by_id(1);
-  $result = $student->grades;
+  $result = $student->getGrades();
   if ($result) {
     foreach ($result as $key => $grades) {
       echo "<b>Id:</b>  $grades->id<br/>";
