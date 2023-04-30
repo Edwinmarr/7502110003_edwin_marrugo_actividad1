@@ -1,13 +1,13 @@
 <?php
 
-include_once '../libs/Configuration.php';
+namespace Model\Entities;
 
-class Grade extends ActiveRecord\Model
-{
+use Illuminate\Database\Eloquent\Model;
+
+class Grade extends Model{
     static $belongs_to = array(
         array('student'),
     );
-   
 }
 
 $grades = new Grade();
