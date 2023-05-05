@@ -1,15 +1,14 @@
 <?php
 
-namespace Model\Entities;
+namespace Act1Model\entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Grade extends Model{
-    static $belongs_to = array(
-        array('student'),
-    );
+    use HasFactory;
+    public function student(){
+        return $this->belongsTo(Student::class,'students_id');
+    }
+
 }
-
-$grades = new Grade();
-
-

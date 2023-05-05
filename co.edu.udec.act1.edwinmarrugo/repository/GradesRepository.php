@@ -1,11 +1,11 @@
 <?php
-include_once '../model/Grade.php';
+
+require_once "../vendor/autoload.php";
+require_once "../config/Configuration.php";
+
+use Act1Model\entities\Grade;
 
 class GradesRepository {
-    public static function insert ($grade){
-        $state = $grade->save();
-        return $state;
-    }
 
     public static function save($grade){
         try{
@@ -27,9 +27,11 @@ class GradesRepository {
     }
     public static function findGradeById($id){
         try {
-            return Grade::find_by_id($id);
+            return Grade::where('id',$id)->first();
         } catch (Exception $e) {
             throw new Exception("Error finding grade: " . $e->getMessage());
         }
     }
 }
+$result = GradesRepository::list_grades();
+echo $result;
