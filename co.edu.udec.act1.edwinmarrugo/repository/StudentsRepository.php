@@ -38,7 +38,18 @@ class StudentsRepository {
             $grades = Student::where('type_id',$typeId)
             ->where('id_number',$idNumber)
             ->join('grades', 'grades.students_id', '=', 'students.id')
-            ->select('grades.id','students.name','grades.date','grades.teacher','grades.subject','grades.carreer','grades.university','grades.period','grades.graded_activity','grades.percentage','grades.activity_grade')
+            ->select(
+                'grades.id',
+                'students.name',
+                'grades.date',
+                'grades.teacher',
+                'grades.subject',
+                'grades.carreer',
+                'grades.university',
+                'grades.period',
+                'grades.graded_activity',
+                'grades.percentage',
+                'grades.activity_grade')
             ->get();
             return $grades;
         } catch (Exception $e) {
@@ -55,7 +66,5 @@ class StudentsRepository {
     }
     
 }
-$grades = StudentsRepository::findGradesByStudentIdentification("12345","CC");
 
 
-echo $grades;

@@ -2,14 +2,23 @@
 
 require_once "../vendor/autoload.php";
 require_once "../config/Configuration.php";
+require_once "../repository/StudentsRepository.php";
 
 use Act1Model\entities\Grade;
 
 class GradesRepository {
 
-    public static function save($grade){
+    public static function save($grade,$student){
         try{
+            $grade->student()->associate($student);
             return $grade->save();
+        }catch(Exception $e){
+            throw new Exception('Error saving grade: ' . $e->getMessage());
+        }
+    }
+    public static function edit($grade){
+        try{
+            return $grade->update();
         }catch(Exception $e){
             throw new Exception('Error saving grade: ' . $e->getMessage());
         }

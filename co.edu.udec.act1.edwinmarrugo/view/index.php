@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_SESSION['student'])) {
+	header("Location: users/table_page.php");
+}
 ?>
 
 <!DOCTYPE html>

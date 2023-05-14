@@ -5,6 +5,7 @@ session_start();
 if (!isset($_SESSION['student'])) {
 	header("Location: ../index.php");
 }
+
 $grades = $_SESSION['grades'];
 
 	
@@ -40,7 +41,7 @@ $grades = $_SESSION['grades'];
 			</ul>
 		</nav>
 	</header>
-
+	<a href="addGrades.php">Agregar</a>
 	<table>
 		<thead>
 			<tr>
@@ -75,8 +76,8 @@ $grades = $_SESSION['grades'];
 						<td>$grade->graded_activity</td>
 						<td>$grade->percentage</td>
 						<td>$grade->activity_grade</td>
-						<td><button class='editar-btn'>Editar</button></td>
-						<td><button class='eliminar-btn'>Eliminar</button></td>
+						<td><a href='../../controller/StudentController.php?getEditForm=true&id=$grade->id'>Editar</a></td>
+						<td><a href='../../controller/StudentController.php?delete=true&id=$grade->id'>Eliminar</a></td>
 					</tr>";
 			}
 			?>
