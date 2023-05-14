@@ -67,24 +67,15 @@ td:last-child button {
 		margin-bottom: 5px;
 	}
 }
-.editar-btn,
-.eliminar-btn {
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #333;
-  border: none;
-  cursor: pointer;
-  height: inherit;
-}
-
-.editar-btn:hover,
-.eliminar-btn:hover {
-  background-color: #555;
-}
-
-
+td .button {
+	display: inline-block;
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius: 5px;
+  }
 
 
