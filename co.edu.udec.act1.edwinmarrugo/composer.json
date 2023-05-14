@@ -1,0 +1,16 @@
+{
+    "name": "edwin/co.edu.udec.act1.edwinmarrugo",
+    "require": {
+        "illuminate/database": "^10.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Act1Model\\": "model/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Edwin de Jesús Marrugo Rodríguez"
+        }
+    ]
+}
