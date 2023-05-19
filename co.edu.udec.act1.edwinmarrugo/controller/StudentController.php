@@ -71,7 +71,6 @@ class StudentController {
         $password          = $_POST['password'];
         $passwordConfirmed = $_POST['confirm-password'];
 
-        StudentController::passwordConfirmation($password,$passwordConfirmed);
 
         $newStudent = new Student();
         $newStudent->name      = $name;
@@ -82,14 +81,17 @@ class StudentController {
         $newStudent->email     = $email;
         $newStudent->password  = $password;
 
-        StudentsRepository::save($newStudent);
-        header("location: ../view/users/register.php?userCreated=true");
+        if(StudentController::passwordConfirmation($password,$passwordConfirmed)){
+            StudentsRepository::save($newStudent);
+            header("location: ../view/users/register.php?userCreated=true");
+        }else{
+            header("location: ../view/users/register.php?passwordsMatch=false");
+        }
     }
     public static function passwordConfirmation($password,$passwordConfirmed){
         if ($password == $passwordConfirmed) {
             return true;
         }else {
-            header("location: ../view/users/register.php?passwordsMatch=false");
             return false;
         }
 
