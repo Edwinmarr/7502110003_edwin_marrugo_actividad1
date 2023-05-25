@@ -1,2 +1,6 @@
 # 7502110003_edwin_marrugo_actividad1
-This is a mvc php application with a crud for a relational database using a ORM
+Instalar composer
+Correr el comando composer install sobre la carpeta del proyecto.
+
+El video se encuentra en la carpeta comprimida enviada en la plataforma.
+
